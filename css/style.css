@@ -1,0 +1,220 @@
+@charset "UTF-8";
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo-img {
+  width: 150px;
+  height: 150px;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: #e6e0bb;
+  font: 15px/24px "opensans-semibold", sans-serif;
+}
+
+nav a {
+  background: #282c34;
+  width: 150px;
+  text-align: center;
+  line-height: 150px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+/* common */
+/* small screen */
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  color: #121212;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/*-------------------------------------------
+Header
+-------------------------------------------*/
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#logo-img {
+  margin-left: 20px;
+  width: 150px;
+  height: 80px;
+}
+
+#nav {
+  margin-left: auto;
+}
+
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: #343a40;
+  font: 15px/24px "opensans-semibold", sans-serif;
+}
+
+nav a {
+  background: white;
+  width: 150px;
+  text-align: center;
+  line-height: 130px;
+  text-decoration: none;
+  color: #343a40;
+  display: block;
+}
+
+/* main */
+main {
+  padding-top: 80px;
+}
+
+.sec-title {
+  font-size: 2.25rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font: normal normal bold 36px/54px Meiryo;
+}
+
+#bg-video {
+  width: 100%;
+  background-color: #fc9a99;
+}
+
+/*-------------------------------------------
+ section: Pickup
+-------------------------------------------*/
+#pickup {
+  width: 100%;
+  padding: 100px 0 50px 0;
+  background-color: rgb(147, 67, 103);
+}
+#pickup .sec-title {
+  color: #343a40;
+}
+
+#pickup .slick-area {
+  font-size: 0;
+}
+
+#pickup .slick-area li {
+  padding: 0 30px;
+}
+
+/*-------------------------------------------
+section: FEATURE
+-------------------------------------------*/
+#feature {
+  max-width: 1240px;
+  padding: 100px 16px 50px 16px;
+  margin: -50px auto 10px auto;
+  background-color: rgb(193, 81, 92);
+}
+#feature .sec-title {
+  color: #343a40;
+}
+
+/*-------------------------------------------
+section: Contact
+-------------------------------------------*/
+#contact {
+  color: #fff;
+  background-color: #343a40;
+  padding: 50px 0;
+}
+
+/*-------------------------------------------
+Footer
+-------------------------------------------*/
+#footer {
+  color: white;
+  background-color: #121212;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.75rem;
+}
+
+/* medium screen */
+@media (max-width: 600px) {
+  /*-------------------------------------------
+  ヘッダー
+  -------------------------------------------*/
+  #header {
+    padding: 20px 16px;
+  }
+  /*-------------------------------------------
+  Video
+  -------------------------------------------*/
+  /*
+  「height: 100vh;」で画面の高さにあわせる
+  「object-fit: cover;」で中央でトリミング
+  */
+  #bg-video {
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .sec-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  /*-------------------------------------------
+  Pickup
+  -------------------------------------------*/
+  #pickup {
+    padding: 80px 0;
+    height: 100vh;
+  }
+  #pickup .slick-area li {
+    padding: 0 20px;
+  }
+  /*-------------------------------------------
+  Feature
+  -------------------------------------------*/
+  #feature {
+    padding: 80px 16px;
+  }
+  /*-------------------------------------------
+  Contact
+  -------------------------------------------*/
+  #contact {
+    padding: 80px 0;
+  }
+}
+/* large screen *//*# sourceMappingURL=style.css.map */
