@@ -3,8 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.min.css" />
     <title>Sneakers Media Site</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="./js/main.js"></script>
   </head>
   <body>
     <header id="header">
@@ -36,13 +45,14 @@
       </div>
       <section id="pickup">
         <h2 class="sec-title">PICK UP</h2>
-        <ul class="slick-area">
+        <ul class="slick-area" id="slick-area">
           <li><img src="images/pickups/pickup1.jpeg" alt="pickup1 text" /></li>
           <li><img src="images/pickups/pickup2.jpeg" alt="pickup2 text" /></li>
           <li><img src="images/pickups/pickup3.jpeg" alt="pickup3 text" /></li>
           <li><img src="images/pickups/pickup4.jpeg" alt="pickup4 text" /></li>
           <li><img src="images/pickups/pickup5.jpeg" alt="pickup5 text" /></li>
         </ul>
+        <div class="dots"></div>
       </section>
       <section id="feature">
         <h2 class="sec-title">FEATURE</h2>
