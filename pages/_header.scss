@@ -1,31 +1,37 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .logo {
   display: flex;
 }
 
-.logo-img {
+#logo-img {
+  margin-left: 20px;
   width: 150px;
-  height: 150px;
+  height: 120px;
 }
 
-nav {
+#nav {
   margin-left: auto;
 }
 
-nav ul {
+#nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  font: #e6e0bb;
+  font: #343a40;
   font: 15px/24px "opensans-semibold", sans-serif;
 }
 
 nav a {
-  background: #282c34;
+  background: white;
   width: 150px;
   text-align: center;
-  line-height: 150px;
+  line-height: 120px;
   text-decoration: none;
-  color: white;
+  color: #343a40;
   display: block;
 }
