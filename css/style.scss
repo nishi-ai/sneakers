@@ -64,10 +64,12 @@ Header _header.scss
   font-size: 0;
 }
 
+#pickup .slick-area li {
+  padding: 0 30px;
+}
 .slick-area .slick-slide {
   width: 400px;
   height: 220px;
-  margin: 0 40px;
   position: relative;
   overflow: hidden;
 }
@@ -80,8 +82,8 @@ Header _header.scss
 }
 
 .slick-area .slick-arrow {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
@@ -101,7 +103,7 @@ Header _header.scss
   border: 1px solid $main-text-color;
   border-width: 3px 3px 0 0;
   position: absolute;
-  top: 24px;
+  top: 15px;
   transform: rotate(45deg);
 }
 .slick-area .slick-next {
@@ -111,11 +113,11 @@ Header _header.scss
   left: 0;
 }
 .slick-area .slick-next::before {
-  left: 20px;
+  left: 12px;
 }
 .slick-area .slick-prev::before {
   border-width: 0 0 3px 3px;
-  right: 22px;
+  right: 12px;
 }
 .slick-area .slick-dots {
   text-align: center;
@@ -180,6 +182,12 @@ Footer
 }
 /* medium screen */
 @media (max-width: 600px) {
+  #header {
+    display: flex;
+  }
+  nav a {
+    display: none;
+  }
   /*-------------------------------------------
   ヘッダー
   -------------------------------------------*/
@@ -209,7 +217,6 @@ Footer
   -------------------------------------------*/
   #pickup {
     padding: 80px 0;
-    height: 100vh;
   }
 
   #pickup .slick-area li {

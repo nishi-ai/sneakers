@@ -1,3 +1,28 @@
+// Smooth scroll
+const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+for (let i = 0; i < smoothScrollTrigger.length; i++) {
+  smoothScrollTrigger[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    const href = smoothScrollTrigger[i].getAttribute("href");
+    const targetElement = document.getElementById(href.replace("#", ""));
+    // get the height of the targetElement
+    const rect = targetElement.getBoundingClientRect().top;
+    console.log("rect", rect);
+    // get the number of pixels the currently scrolled document
+    const offset = window.pageYOffset;
+    console.log("offset", offset);
+    // get the fixed header hight
+    const gap = 135.45;
+    const target = rect + offset - gap;
+
+    window.scrollTo({
+      top: target,
+      behavior: "smooth",
+    });
+  });
+}
+
+// Slick slider JQueary
 $(function () {
   $("#slick-area").slick({
     arrows: true, // 前・次のボタンを表示する
