@@ -63,7 +63,6 @@ const fadeOption = {
 // The callback receives a list of IntersectionObserverEntry objects and the observer
 const targets = (entries, observer) => {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
       observer.unobserve(entry.target);
@@ -71,7 +70,7 @@ const targets = (entries, observer) => {
   });
 };
 
-// Create the intersection observer by calling its constructor.
+// Create a instance of the intersection observer.
 // trigger this callback 'targets' when scrolled and passed by fadeOption.
 const fadeObserver = new IntersectionObserver(targets, fadeOption);
 
