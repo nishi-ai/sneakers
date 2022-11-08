@@ -64,10 +64,12 @@ Header _header.scss
   font-size: 0;
 }
 
+#pickup .slick-area li {
+  padding: 0 30px;
+}
 .slick-area .slick-slide {
   width: 400px;
   height: 220px;
-  margin: 0 40px;
   position: relative;
   overflow: hidden;
 }
@@ -80,8 +82,8 @@ Header _header.scss
 }
 
 .slick-area .slick-arrow {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
@@ -101,7 +103,7 @@ Header _header.scss
   border: 1px solid $main-text-color;
   border-width: 3px 3px 0 0;
   position: absolute;
-  top: 24px;
+  top: 15px;
   transform: rotate(45deg);
 }
 .slick-area .slick-next {
@@ -111,11 +113,11 @@ Header _header.scss
   left: 0;
 }
 .slick-area .slick-next::before {
-  left: 20px;
+  left: 12px;
 }
 .slick-area .slick-prev::before {
   border-width: 0 0 3px 3px;
-  right: 22px;
+  right: 12px;
 }
 .slick-area .slick-dots {
   text-align: center;
@@ -149,16 +151,62 @@ Header _header.scss
 /*-------------------------------------------
 section: FEATURE
 -------------------------------------------*/
+
+/*
+フェード表示させる要素に使用するためのクラス
+*/
+.fadein {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
 #feature {
   max-width: 1240px;
   padding: 100px 16px 50px 16px;
   margin: -50px auto 10px auto;
-  background-color: rgb(193, 81, 92);
   .sec-title {
     color: $main-text-color;
   }
 }
 
+#feature .grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  .card {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px 4px #ccc;
+    border-radius: 5%;
+  }
+
+  img {
+    vertical-align: top;
+    border-radius: 5% 5% 0% 0%;
+  }
+
+  .card-content {
+    padding: 30px;
+  }
+
+  .card-category {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    color: #4f5e6d;
+    margin-bottom: 20px;
+  }
+
+  .card-text {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .card-date {
+    font-size: 0.75rem;
+    text-align: right;
+  }
+}
 /*-------------------------------------------
 section: Contact
 -------------------------------------------*/
@@ -180,6 +228,12 @@ Footer
 }
 /* medium screen */
 @media (max-width: 600px) {
+  #header {
+    display: flex;
+  }
+  nav a {
+    display: none;
+  }
   /*-------------------------------------------
   ヘッダー
   -------------------------------------------*/
@@ -209,7 +263,6 @@ Footer
   -------------------------------------------*/
   #pickup {
     padding: 80px 0;
-    height: 100vh;
   }
 
   #pickup .slick-area li {
