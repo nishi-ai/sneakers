@@ -131,6 +131,7 @@ Header _header.scss
   justify-content: center;
   padding: 10px 0 20px 0;
 }
+
 .dots .slick-dots button {
   display: block;
   width: 10px;
@@ -144,6 +145,13 @@ Header _header.scss
   background: #bcbcbc;
   border-radius: 50%;
 }
+
+.dots .slick-dots button:hover {
+  background: $main-text-color;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
 .dots .slick-dots .slick-active button {
   background: $main-text-color;
 }
