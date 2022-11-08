@@ -1,0 +1,65 @@
+@use "./variables";
+
+#contact {
+  color: #fff;
+  background-color: variables.$main-text-color;
+  padding: 50px 0;
+}
+
+#contact .content {
+  max-width: 1240px;
+  padding: 0 16px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact .contact-info p {
+  margin-bottom: 30px;
+}
+
+#contact .contact-info,
+#contact .contact-form {
+  width: 45%;
+}
+
+label {
+  font-size: 13px;
+  font-weight: normal;
+  pointer-events: none;
+  opacity: 0.5;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+  width: 100%;
+  border: 0.5px solid #1a1f23;
+  border-width: 0px 0px 1px 0px;
+  padding: 8px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+  transition: 0.2s ease;
+  color: #fff;
+}
+
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus {
+  outline: none;
+  opacity: 1;
+}
+
+#contact .contact-form .button input {
+  width: 200px;
+  float: right;
+  color: #fff;
+  transition: 0.2s ease;
+
+  &:hover {
+    color: #b1b1b1;
+    cursor: pointer;
+  }
+}

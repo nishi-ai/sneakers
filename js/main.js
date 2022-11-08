@@ -71,7 +71,7 @@ const targets = (entries, observer) => {
 };
 
 // Create a instance of the intersection observer.
-// trigger this callback 'targets' when scrolled and passed by fadeOption.
+// trigger this callback 'targets' when scrolled and passed by fadeOption (when image start to show with 0%).
 const fadeObserver = new IntersectionObserver(targets, fadeOption);
 
 // call fadeObserver for each fadeTarget
