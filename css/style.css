@@ -45,46 +45,6 @@ nav a {
   display: block;
 }
 
-/* common */
-/* small screen */
-html {
-  font-size: 100%;
-}
-
-body {
-  margin: 0;
-  color: #121212;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-img {
-  max-width: 100%;
-}
-
-li {
-  list-style: none;
-}
-
-/*-------------------------------------------
-Header _header.scss
--------------------------------------------*/
-/* main */
-.sec-title {
-  font-size: 2.25rem;
-  margin-bottom: 30px;
-  text-align: center;
-  font: normal normal bold 36px/54px Meiryo;
-}
-
-#bg-video {
-  width: 100%;
-  background-color: #fc9a99;
-}
-
-/*-------------------------------------------
- section: Pickup
--------------------------------------------*/
 #pickup {
   width: 100%;
   padding: 100px 0 100px 0;
@@ -148,10 +108,12 @@ Header _header.scss
 
 .slick-area .slick-next {
   right: 0;
+  margin-right: 5px;
 }
 
 .slick-area .slick-prev {
   left: 0;
+  margin-left: 5px;
 }
 
 .slick-area .slick-next::before {
@@ -205,9 +167,6 @@ Header _header.scss
   background: #343a40;
 }
 
-/*-------------------------------------------
-section: FEATURE
--------------------------------------------*/
 /*
 フェード表示させる要素に使用するためのクラス
 */
@@ -268,21 +227,126 @@ section: FEATURE
   text-align: right;
 }
 
-/*-------------------------------------------
-section: Contact
--------------------------------------------*/
 #contact {
   color: #fff;
   background-color: #343a40;
   padding: 50px 0;
 }
 
+#contact .content {
+  max-width: 1240px;
+  padding: 0 16px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#contact .contact-info p {
+  margin-bottom: 30px;
+}
+
+#contact .contact-info,
+#contact .contact-form {
+  width: 45%;
+}
+
+label {
+  font-size: 13px;
+  font-weight: normal;
+  pointer-events: none;
+  opacity: 0.5;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+  width: 100%;
+  border: 0.5px solid #1a1f23;
+  border-width: 0px 0px 1px 0px;
+  padding: 8px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  color: #fff;
+}
+
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus {
+  outline: none;
+  opacity: 1;
+}
+
+#contact .contact-form .button input {
+  width: 200px;
+  float: right;
+  color: #fff;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+#contact .contact-form .button input:hover {
+  color: #b1b1b1;
+  cursor: pointer;
+}
+
+/* common */ /* small screen */
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  color: #121212;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/*-------------------------------------------
+Header _header.scss
+-------------------------------------------*/
+/* main */
+.sec-title {
+  font-size: 2.25rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font: normal normal bold 36px/54px Meiryo;
+}
+
+#bg-video {
+  width: 100%;
+  background-color: #fc9a99;
+}
+
+/*-------------------------------------------
+ section: Pickup _pickup.scss
+-------------------------------------------*/
+/*-------------------------------------------
+section: FEATURE _feature.scss
+-------------------------------------------*/
+/*-------------------------------------------
+section: Contact _contact.scss
+-------------------------------------------*/
 /*-------------------------------------------
 Footer
 -------------------------------------------*/
 #footer {
-  color: white;
-  background-color: #121212;
+  color: #fff;
+  background-color: #343a40;
   text-align: center;
   padding: 10px;
   font-size: 0.75rem;
