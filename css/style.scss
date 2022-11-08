@@ -169,6 +169,12 @@ section: FEATURE
   transition: all 1s;
 }
 
+// using this with Intersection Observer API
+.fadein.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 #feature {
   max-width: 1240px;
   padding: 100px 16px 50px 16px;
