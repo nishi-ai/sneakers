@@ -23,27 +23,26 @@ for (let i = 0; i < smoothScrollTrigger.length; i++) {
 $(function () {
   // Slick slider JQueary
   $("#slick-area").slick({
-    arrows: true, // 前・次のボタンを表示する
-    dots: true, // ドットナビゲーションを表示する
-    appendDots: $(".dots"), // ドットナビゲーションの生成位置を変更
-    speed: 1000, // スライドさせるスピード（ミリ秒）
-    slidesToShow: 1, // 表示させるスライド数
-    centerMode: true, // slidesToShowが奇数のとき、現在のスライドを中央に表示する
-    variableWidth: true, // スライド幅の自動計算を無効化
+    arrows: true, // prevoius and next button
+    dots: true, // dots navigation
+    appendDots: $(".dots"), // add / change dots navigation
+    speed: 1000, // slide speed mili
+    slidesToShow: 1, // the number of images for slides
+    centerMode: true, // show the current slide in center if slidesToShow is odd
+    variableWidth: true, // auto calculation the width for each slide
   });
 
   // Fadein
   $(window).scroll(function () {
-    // fadeinクラスに対して順に処理を行う
     $(".fadein").each(function () {
-      // スクロールした距離
+      // get current scrolled height
       let scroll = $(window).scrollTop();
-      // fadeinクラスの要素までの距離
+      // get the height until each fadein element
       let target = $(this).offset().top;
-      // 画面の高さ
+      // get window height itself
       let windowHeight = $(window).height();
-      // fadeinクラスの要素が画面下にきてから200px通過した
-      // したタイミングで要素を表示
+      // start Fade in when the scrolled height is bigger than the target height -
+      // window's height + 200px
       if (scroll > target - windowHeight + 200) {
         $(this).css("opacity", "1");
         $(this).css("transform", "translateY(0)");
