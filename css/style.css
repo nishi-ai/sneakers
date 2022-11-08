@@ -195,6 +195,12 @@ Header _header.scss
   border-radius: 50%;
 }
 
+.dots .slick-dots button:hover {
+  background: #343a40;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
 .dots .slick-dots .slick-active button {
   background: #343a40;
 }
