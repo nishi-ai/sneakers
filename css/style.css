@@ -219,6 +219,12 @@ section: FEATURE
   transition: all 1s;
 }
 
+.fadein.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
 #feature {
   max-width: 1240px;
   padding: 100px 16px 50px 16px;
