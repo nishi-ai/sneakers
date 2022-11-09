@@ -316,19 +316,16 @@ label {
   left: 0;
 }
 
-:root {
-  --top-change: 3110px;
-}
-
 #modal {
   background: #fff;
   max-width: 400px;
   padding: 20px;
   border-radius: 4px;
-  position: absolute;
-  top: var(--top-change);
-  left: 0;
-  right: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   margin: 0 auto;
 }
 

@@ -84,16 +84,9 @@ const sendButton = document.getElementById("send");
 const closeButton = document.getElementById("close");
 const modal = document.getElementById("modal");
 const mask = document.getElementById("mask");
-const contactSection = document.getElementById("contact").offsetTop;
-// get the number of pixels the currently scrolled document
-const offset = window.pageYOffset;
-console.log("offset", offset);
-console.log("contactSection", contactSection);
-// responsive position for modal need to be fixed
-const string = parseInt(contactSection) + "px";
+
 sendButton.addEventListener("click", () => {
   modal.classList.remove("hidden");
-  modal.style.setProperty("--top-change", string);
   mask.classList.remove("hidden");
 });
 
