@@ -221,7 +221,7 @@
             </p>
           </div>
           <div class="contact-form">
-            <form action="#">
+            <form action="#contact">
               <dl>
                 <dt><label for="name">NAME:</label></dt>
                 <dd>
@@ -250,13 +250,22 @@
                   ></textarea>
                 </dd>
               </dl>
-              <div class="button"><input type="submit" value="SEND" /></div>
+              <div class="button" id="send">
+                <input type="submit" value="SEND" />
+              </div>
             </form>
           </div>
         </div>
+        <div id="mask" class="hidden"></div>
+        <section id="modal" class="hidden">
+          <p>
+            This website is build for demo purpose. We do not have the actual
+            contact form.
+          </p>
+          <div id="close">CLOSE</div>
+        </section>
       </section>
     </main>
-
     <footer id="footer">
       <p>&copy; Sneakers</p>
     </footer>

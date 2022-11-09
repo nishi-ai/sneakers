@@ -1,4 +1,4 @@
-// Smooth scroll
+// Smooth scroll ---------------------------------------------
 const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
 for (let i = 0; i < smoothScrollTrigger.length; i++) {
   smoothScrollTrigger[i].addEventListener("click", (e) => {
@@ -21,7 +21,7 @@ for (let i = 0; i < smoothScrollTrigger.length; i++) {
 }
 
 $(function () {
-  // Slick slider JQueary
+  // Slick slider JQueary --------------------------------------------
   $("#slick-area").slick({
     arrows: true, // prevoius and next button
     dots: true, // dots navigation
@@ -51,7 +51,7 @@ $(function () {
   //   });
 });
 
-// Fadein with Intersection Observer API
+// Fadein with Intersection Observer API ---------------------------
 const fadeTargets = document.querySelectorAll(".fadein");
 
 const fadeOption = {
@@ -77,4 +77,24 @@ const fadeObserver = new IntersectionObserver(targets, fadeOption);
 // call fadeObserver for each fadeTarget
 fadeTargets.forEach((target) => {
   fadeObserver.observe(target);
+});
+
+// Show modal when send button clicked ----------------------------
+const sendButton = document.getElementById("send");
+const closeButton = document.getElementById("close");
+const modal = document.getElementById("modal");
+const mask = document.getElementById("mask");
+
+sendButton.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  mask.classList.remove("hidden");
+});
+
+closeButton.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  mask.classList.add("hidden");
+});
+
+mask.addEventListener("click", () => {
+  closeButton.click();
 });

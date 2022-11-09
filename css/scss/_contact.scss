@@ -63,3 +63,49 @@ label {
     cursor: pointer;
   }
 }
+
+#close {
+  cursor: pointer;
+  width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
+  color: variables.$main-text-color;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#modal {
+  background: #fff;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 4px;
+  // positioning attached to contact section
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+#modal > p {
+  margin: 0 0 20px;
+  color: variables.$main-text-color;
+}
+
+#mask.hidden {
+  display: none;
+}
+
+#modal.hidden {
+  transform: translate(0, -4000px);
+}
