@@ -296,6 +296,64 @@ label {
   cursor: pointer;
 }
 
+#close {
+  cursor: pointer;
+  width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
+  color: #343a40;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+:root {
+  --top-change: 3110px;
+}
+
+#modal {
+  background: #fff;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: var(--top-change);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#modal > p {
+  margin: 0 0 20px;
+  color: #343a40;
+}
+
+#mask.hidden {
+  display: none;
+}
+
+#modal.hidden {
+  -webkit-transform: translate(0, -4000px);
+          transform: translate(0, -4000px);
+}
+
+#footer {
+  color: #fff;
+  background-color: #343a40;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.75rem;
+}
+
 /* common */ /* small screen */
 html {
   font-size: 100%;
@@ -342,16 +400,8 @@ section: FEATURE _feature.scss
 section: Contact _contact.scss
 -------------------------------------------*/
 /*-------------------------------------------
-Footer
+Footer _footer.scss
 -------------------------------------------*/
-#footer {
-  color: #fff;
-  background-color: #343a40;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.75rem;
-}
-
 /* medium screen */
 @media (max-width: 600px) {
   #header {
@@ -363,7 +413,7 @@ Footer
     display: none;
   }
   /*-------------------------------------------
-  ヘッダー
+  header
   -------------------------------------------*/
   #header {
     padding: 20px 16px;
@@ -405,6 +455,19 @@ Footer
   -------------------------------------------*/
   #contact {
     padding: 80px 0;
+  }
+  #contact .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #contact .contact-info,
+#contact .contact-form {
+    width: 100%;
+  }
+  #contact .contact-form .button input {
+    width: 100%;
   }
 }
 /* large screen *//*# sourceMappingURL=style.css.map */
