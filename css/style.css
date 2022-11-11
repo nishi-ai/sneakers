@@ -124,6 +124,7 @@
 #pickup {
   width: 100%;
   padding: 100px 0 100px 0;
+  margin-top: 50px;
 }
 #pickup .sec-title {
   color: #343a40;

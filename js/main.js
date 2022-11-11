@@ -34,8 +34,10 @@ for (let i = 0; i < smoothScrollTrigger.length; i++) {
       top: target,
       behavior: "smooth",
     });
-    overlay.classList.remove("open");
-    navColumn.classList.remove("open");
+    // remove active class below id when pressed from hidden nav bar
+    overlay.classList.remove("active");
+    navColumn.classList.remove("active");
+    toggleButton.classList.remove("active");
   });
 }
 
