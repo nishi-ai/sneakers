@@ -1,3 +1,20 @@
+// open & close hamburger menu ----------------------------
+const toggleButton = document.getElementById("toggle");
+const overlay = document.getElementById("overlay");
+const navColumn = document.getElementById("nav");
+
+toggleButton.addEventListener("click", () => {
+  navColumn.classList.toggle("active");
+  overlay.classList.toggle("active");
+  toggleButton.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  navColumn.classList.remove("active");
+  toggleButton.classList.remove("active");
+});
+
 // Smooth scroll ---------------------------------------------
 const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
 for (let i = 0; i < smoothScrollTrigger.length; i++) {
@@ -17,6 +34,8 @@ for (let i = 0; i < smoothScrollTrigger.length; i++) {
       top: target,
       behavior: "smooth",
     });
+    overlay.classList.remove("open");
+    navColumn.classList.remove("open");
   });
 }
 

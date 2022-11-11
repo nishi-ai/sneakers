@@ -1,0 +1,69 @@
+@use "./variables";
+
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 45px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background-color: variables.$main-text-color;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+
+// hamburger pressed
+.toggle_btn span:nth-child(1) {
+  top: 5px;
+}
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+
+#toggle.active span {
+  background-color: #fff;
+}
+// hamburger pressed again
+.toggle_btn.active span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+.toggle_btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.toggle_btn.active span:nth-child(3) {
+  -webkit-transform: translateY(-8px) rotate(315deg);
+  transform: translateY(-8px) rotate(315deg);
+}
+
+#overlay {
+  display: none;
+}
+
+#overlay.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(157, 154, 154);
+  opacity: 0.8;
+  z-index: 10;
+  cursor: pointer;
+}

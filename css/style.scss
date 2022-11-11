@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
 @use "./scss/header";
+@use "./scss/hamburger";
 @use "./scss/pickup";
 @use "./scss/feature";
 @use "./scss/contact";
 @use "./scss/footer";
 @use "./scss/variables";
 
-/* common */ /* small screen */
+/* common */
 html {
   font-size: 100%;
 }
@@ -17,6 +18,7 @@ body {
   color: #121212;
   font-size: 0.9rem;
   line-height: 1.7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 img {
@@ -30,6 +32,10 @@ li {
 Header _header.scss
 -------------------------------------------*/
 
+/*-------------------------------------------
+Hamburger Icon _hamburger.scss
+-------------------------------------------*/
+
 /* main */
 .sec-title {
   font-size: 2.25rem;
@@ -40,7 +46,6 @@ Header _header.scss
 
 #bg-video {
   width: 100%;
-  background-color: variables.$main-color;
 }
 
 /*-------------------------------------------
@@ -59,20 +64,63 @@ section: Contact _contact.scss
 Footer _footer.scss
 -------------------------------------------*/
 
-/* medium screen */
-@media (max-width: 600px) {
-  #header {
-    display: flex;
-  }
+/* small screen */
+@media (max-width: 750px) {
   nav a {
     display: none;
+  }
+
+  #nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    color: #fff;
+    padding: 60px 25px;
+    background-color: variables.$main-text-color;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all 0.5s;
+    z-index: 30;
+    opacity: 0;
+  }
+
+  #nav.active {
+    left: 0;
+    opacity: 1;
+  }
+
+  #nav.active a {
+    margin: 20px;
+    text-decoration: none;
+    display: block;
+    background-color: variables.$main-text-color;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all 0.5s;
+    z-index: 30;
+  }
+
+  #nav.active ul.nav-menu {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  #nav.active ul.nav-menu li {
+    position: relative;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: solid 1px #fff;
   }
   /*-------------------------------------------
   header
   -------------------------------------------*/
-  #header {
-    padding: 20px 16px;
-  }
 
   /*-------------------------------------------
   Video
@@ -128,5 +176,8 @@ Footer _footer.scss
 }
 
 /* large screen */
-@media (min-width: 800px) {
+@media (min-width: 751px) {
+  .toggle_btn {
+    display: none;
+  }
 }
