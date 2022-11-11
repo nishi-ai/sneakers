@@ -47,6 +47,9 @@
     color: #343a40;
     display: block;
   }
+  #nav a:hover {
+    color: rgb(108, 106, 103);
+  }
 }
 .toggle_btn {
   display: block;
