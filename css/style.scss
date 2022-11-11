@@ -117,11 +117,30 @@ Footer _footer.scss
     padding: 0;
   }
 
-  #nav.active ul.nav-menu li {
+  #nav ul.nav-menu li {
     position: relative;
     margin: 0;
     padding: 10px 0;
     border-bottom: solid 1px #fff;
+    opacity: 0;
+    transform: translateX(16px);
+    transition: all 0.5s;
+  }
+
+  #nav.active ul.nav-menu li {
+    opacity: 1;
+    transform: none;
+  }
+
+  #nav.active ul.nav-menu li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  #nav.active ul.nav-menu li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  #nav.active ul.nav-menu li:nth-child(3) {
+    transition-delay: 0.3s;
   }
   /*-------------------------------------------
   header
