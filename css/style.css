@@ -533,11 +533,33 @@ Footer _footer.scss
     margin: 0;
     padding: 0;
   }
-  #nav.active ul.nav-menu li {
+  #nav ul.nav-menu li {
     position: relative;
     margin: 0;
     padding: 10px 0;
     border-bottom: solid 1px #fff;
+    opacity: 0;
+    -webkit-transform: translateX(16px);
+            transform: translateX(16px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  #nav.active ul.nav-menu li {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+  #nav.active ul.nav-menu li:nth-child(1) {
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+  }
+  #nav.active ul.nav-menu li:nth-child(2) {
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+  #nav.active ul.nav-menu li:nth-child(3) {
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
   }
   /*-------------------------------------------
   header

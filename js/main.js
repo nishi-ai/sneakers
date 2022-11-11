@@ -20,6 +20,8 @@ const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
 for (let i = 0; i < smoothScrollTrigger.length; i++) {
   smoothScrollTrigger[i].addEventListener("click", (e) => {
     e.preventDefault();
+    console.log("smoothScrollTrigger", smoothScrollTrigger[i]);
+
     const href = smoothScrollTrigger[i].getAttribute("href");
     const targetElement = document.getElementById(href.replace("#", ""));
     // get the height of the targetElement
@@ -27,11 +29,10 @@ for (let i = 0; i < smoothScrollTrigger.length; i++) {
     // get the number of pixels the currently scrolled document
     const offset = window.pageYOffset;
     // get the fixed header hight
-    const gap = 135.45;
+    const gap = 113.45;
     const target = rect + offset - gap;
-
     window.scrollTo({
-      top: target,
+      top: href === "#header" ? 0 : target,
       behavior: "smooth",
     });
     // remove active class below id when pressed from hidden nav bar
