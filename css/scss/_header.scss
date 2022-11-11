@@ -40,5 +40,9 @@
     text-decoration: none;
     color: variables.$main-text-color;
     display: block;
+
+    &:hover {
+      color: rgb(108, 106, 103);
+    }
   }
 }
