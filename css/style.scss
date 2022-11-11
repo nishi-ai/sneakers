@@ -3,7 +3,7 @@
 @use "./scss/header";
 @use "./scss/hamburger";
 @use "./scss/pickup";
-@use "./scss/feature";
+@use "./scss/features";
 @use "./scss/contact";
 @use "./scss/footer";
 @use "./scss/variables";
@@ -44,8 +44,13 @@ Hamburger Icon _hamburger.scss
   font: normal normal bold 36px/54px Meiryo;
 }
 
+#main {
+  padding-top: 80px;
+}
+
 #bg-video {
   width: 100%;
+  object-fit: cover;
 }
 
 /*-------------------------------------------
@@ -161,7 +166,7 @@ Footer _footer.scss
   Contact
   -------------------------------------------*/
   #contact {
-    padding: 80px 0;
+    padding: 80px 30px;
   }
   #contact .content {
     flex-direction: column;
