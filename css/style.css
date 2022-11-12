@@ -124,10 +124,85 @@
   cursor: pointer;
 }
 
+@media (max-width: 750px) {
+  nav a {
+    display: none;
+  }
+  #nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    color: #fff;
+    padding: 60px 25px;
+    background-color: #343a40;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 30;
+    opacity: 0;
+  }
+  #nav.active {
+    left: 0;
+    opacity: 1;
+  }
+  #nav.active a {
+    margin: 20px;
+    text-decoration: none;
+    display: block;
+    background-color: #343a40;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 30;
+  }
+  #nav.active ul.nav-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  #nav ul.nav-menu li {
+    position: relative;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: solid 1px #fff;
+    opacity: 0;
+    -webkit-transform: translateX(16px);
+            transform: translateX(16px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  #nav.active ul.nav-menu li {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+  #nav.active ul.nav-menu li:nth-child(1) {
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+  }
+  #nav.active ul.nav-menu li:nth-child(2) {
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+  #nav.active ul.nav-menu li:nth-child(3) {
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+  }
+}
 #pickup {
   width: 100%;
   padding: 100px 0 100px 0;
-  margin-top: 50px;
 }
 #pickup .sec-title {
   color: #343a40;
@@ -188,11 +263,21 @@
 .slick-area .slick-next {
   right: 0;
   margin-right: 5px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.slick-area .slick-next:hover {
+  background-color: rgb(171, 163, 163);
 }
 
 .slick-area .slick-prev {
   left: 0;
   margin-left: 5px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.slick-area .slick-prev:hover {
+  background-color: rgb(171, 163, 163);
 }
 
 .slick-area .slick-next::before {
@@ -325,6 +410,13 @@
           justify-content: space-between;
 }
 
+#contact-title {
+  font-size: 18px;
+  border-bottom: 1px solid;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
 #contact .contact-info p {
   margin-bottom: 30px;
 }
@@ -332,6 +424,10 @@
 #contact .contact-info,
 #contact .contact-form {
   width: 45%;
+}
+
+#contact .contact-form dt {
+  padding: 8px;
 }
 
 label {
@@ -423,6 +519,76 @@ label {
           transform: translate(0, -4000px);
 }
 
+.contact-info dl {
+  margin: 0;
+}
+.contact-info dl > div {
+  margin-bottom: 8px;
+}
+.contact-info dt {
+  padding: 8px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+}
+.contact-info dt::before {
+  content: "Q. ";
+}
+.contact-info dt::after {
+  content: "+";
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.contact-info dl > div.appear dt::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.contact-info dd {
+  padding: 8px;
+  margin: 0;
+  display: none;
+}
+.contact-info dd::before {
+  content: "A. ";
+}
+.contact-info dl > div.appear dd {
+  display: block;
+  -webkit-animation: 0.4s fadeIn;
+          animation: 0.4s fadeIn;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 #footer {
   color: #fff;
   background-color: #343a40;
@@ -490,83 +656,6 @@ Footer _footer.scss
 -------------------------------------------*/
 /* small screen */
 @media (max-width: 750px) {
-  nav a {
-    display: none;
-  }
-  #nav {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -300px;
-    bottom: 0;
-    width: 300px;
-    color: #fff;
-    padding: 60px 25px;
-    background-color: #343a40;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    z-index: 30;
-    opacity: 0;
-  }
-  #nav.active {
-    left: 0;
-    opacity: 1;
-  }
-  #nav.active a {
-    margin: 20px;
-    text-decoration: none;
-    display: block;
-    background-color: #343a40;
-    color: #fff;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    z-index: 30;
-  }
-  #nav.active ul.nav-menu {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin: 0;
-    padding: 0;
-  }
-  #nav ul.nav-menu li {
-    position: relative;
-    margin: 0;
-    padding: 10px 0;
-    border-bottom: solid 1px #fff;
-    opacity: 0;
-    -webkit-transform: translateX(16px);
-            transform: translateX(16px);
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-  #nav.active ul.nav-menu li {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-  #nav.active ul.nav-menu li:nth-child(1) {
-    -webkit-transition-delay: 0.1s;
-            transition-delay: 0.1s;
-  }
-  #nav.active ul.nav-menu li:nth-child(2) {
-    -webkit-transition-delay: 0.2s;
-            transition-delay: 0.2s;
-  }
-  #nav.active ul.nav-menu li:nth-child(3) {
-    -webkit-transition-delay: 0.3s;
-            transition-delay: 0.3s;
-  }
-  /*-------------------------------------------
-  header
-  -------------------------------------------*/
   /*-------------------------------------------
   Video
   -------------------------------------------*/
@@ -617,6 +706,9 @@ Footer _footer.scss
   }
   #contact .contact-form .button input {
     width: 100%;
+  }
+  #contact .contact-form {
+    margin-top: 20px;
   }
 }
 /* large screen */

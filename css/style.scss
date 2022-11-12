@@ -71,81 +71,6 @@ Footer _footer.scss
 
 /* small screen */
 @media (max-width: 750px) {
-  nav a {
-    display: none;
-  }
-
-  #nav {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -300px;
-    bottom: 0;
-    width: 300px;
-    color: #fff;
-    padding: 60px 25px;
-    background-color: variables.$main-text-color;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transition: all 0.5s;
-    z-index: 30;
-    opacity: 0;
-  }
-
-  #nav.active {
-    left: 0;
-    opacity: 1;
-  }
-
-  #nav.active a {
-    margin: 20px;
-    text-decoration: none;
-    display: block;
-    background-color: variables.$main-text-color;
-    color: #fff;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transition: all 0.5s;
-    z-index: 30;
-  }
-
-  #nav.active ul.nav-menu {
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-  }
-
-  #nav ul.nav-menu li {
-    position: relative;
-    margin: 0;
-    padding: 10px 0;
-    border-bottom: solid 1px #fff;
-    opacity: 0;
-    transform: translateX(16px);
-    transition: all 0.5s;
-  }
-
-  #nav.active ul.nav-menu li {
-    opacity: 1;
-    transform: none;
-  }
-
-  #nav.active ul.nav-menu li:nth-child(1) {
-    transition-delay: 0.1s;
-  }
-
-  #nav.active ul.nav-menu li:nth-child(2) {
-    transition-delay: 0.2s;
-  }
-  #nav.active ul.nav-menu li:nth-child(3) {
-    transition-delay: 0.3s;
-  }
-  /*-------------------------------------------
-  header
-  -------------------------------------------*/
-
   /*-------------------------------------------
   Video
   -------------------------------------------*/
@@ -196,6 +121,9 @@ Footer _footer.scss
   }
   #contact .contact-form .button input {
     width: 100%;
+  }
+  #contact .contact-form {
+    margin-top: 20px;
   }
 }
 
