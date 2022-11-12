@@ -120,3 +120,20 @@ closeButton.addEventListener("click", () => {
 mask.addEventListener("click", () => {
   closeButton.click();
 });
+
+// toggle accordion menu FAQ section
+const questionDts = document.querySelectorAll("dt");
+
+questionDts.forEach((questionDt) => {
+  questionDt.addEventListener("click", () => {
+    questionDt.parentNode.classList.toggle("appear");
+
+    // close one answer, if the other answer appears
+    questionDts.forEach((element) => {
+      // check if the questionDt does not have appear class and is not same with original element
+      if (questionDt !== element) {
+        element.parentNode.classList.remove("appear");
+      }
+    });
+  });
+});

@@ -15,6 +15,13 @@
   justify-content: space-between;
 }
 
+#contact-title {
+  font-size: 18px;
+  border-bottom: 1px solid;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
 #contact .contact-info p {
   margin-bottom: 30px;
 }
@@ -22,6 +29,13 @@
 #contact .contact-info,
 #contact .contact-form {
   width: 45%;
+}
+
+#contact .contact-form {
+  // margin-top: 20px;
+  dt {
+    padding: 8px;
+  }
 }
 
 label {
@@ -109,4 +123,69 @@ label {
 
 #modal.hidden {
   transform: translate(0, -4000px);
+}
+
+// FAQ section
+.contact-info {
+  dl {
+    margin: 0;
+  }
+
+  // make space for each Q&A
+  dl > div {
+    margin-bottom: 8px;
+  }
+
+  // dt = Question
+  dt {
+    padding: 8px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+
+  dt::before {
+    content: "Q. ";
+  }
+
+  dt::after {
+    content: "+";
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    transition: transform 0.3s;
+  }
+
+  dl > div.appear dt::after {
+    transform: rotate(45deg);
+  }
+
+  // dd = answer
+  dd {
+    padding: 8px;
+    margin: 0;
+    display: none;
+  }
+
+  dd::before {
+    content: "A. ";
+  }
+
+  dl > div.appear dd {
+    display: block;
+    animation: 0.4s fadeIn;
+  }
+
+  // use @keyframes FadeIn, since the dd is hidden first and a transision property cannot be set
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      // start from -10px to move down from hidden state
+      transform: translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
