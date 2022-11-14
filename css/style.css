@@ -637,9 +637,10 @@ Hamburger Icon _hamburger.scss
 }
 
 #bg-video {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 100vh;
+  min-height: 550px;
+  background-size: cover;
+  background-position: center;
 }
 
 /*-------------------------------------------
